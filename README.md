@@ -1,4 +1,4 @@
-# review_grammar
+# grammar_drill
 
 Anki addon (v25.9.2) that generates English grammar tasks for vocabulary cards and checks them with Google Gemini AI.
 
@@ -10,15 +10,17 @@ For each card with an English word, the addon:
 
 ## Setup
 
-### 1. API key
+### 1. API keys
 
 Create `.env` in the addon root:
 
 ```
 goog-api-key=YOUR_GOOGLE_API_KEY
+deepseek-api-key=YOUR_DEEPSEEK_API_KEY
 ```
 
-Get a key at [Google AI Studio](https://aistudio.google.com/app/apikey).
+- Google key: [Google AI Studio](https://aistudio.google.com/app/apikey)
+- DeepSeek key: [DeepSeek Platform](https://platform.deepseek.com/)
 
 ### 2. pyproject.toml
 
@@ -36,7 +38,13 @@ response_headers = "0"
 
 ## Models & fallback
 
-The addon tries models in order and automatically switches on a 429 rate-limit response:
+### DeepSeek (primary)
+
+`deepseek-v4-flash` via `https://api.deepseek.com/chat/completions`. Returns `"Got an error"` on failure.
+
+### Gemini (fallback)
+
+The addon tries Gemini models in order and automatically switches on a 429 rate-limit response:
 
 | Priority | Model |
 |---|---|
@@ -60,9 +68,9 @@ Error responses always contain a `result` key (`"Error"` or `"Rate limit exceede
 ## Project structure
 
 ```
-review_grammar/
+grammar_drill/
 ├── __init__.py                        # entry point, hooks into webview_did_receive_js_message
-├── .env                               # API key (not committed)
+├── .env                               # API keys (not committed)
 ├── request-task-from-python.js        # JS: request task generation
 ├── request-task-review-to-python.js   # JS: send answer for review, render result
 └── src/
@@ -70,7 +78,8 @@ review_grammar/
     │   ├── create_task.py             # task generation logic
     │   └── review_task.py             # review orchestration
     ├── llm/
-    │   └── gemini.py                  # Gemini API client with model fallback
+    │   ├── gemini.py                  # Gemini API client with model fallback
+    │   └── deepseek.py                # DeepSeek API client
     ├── data/
     │   ├── models.py                  # ReviewResponseModel schema
     │   ├── prompts.py                 # system prompt for Gemini

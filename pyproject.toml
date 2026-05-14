@@ -1,7 +1,7 @@
 [project]
-name = "Anki"
-description = "This project provides some tools that could be helpful for learning something with Anki"
-requires-python = ">=3.13.5"
+name = "grammar_drill"
+description = "Anki addon that generates English grammar tasks and checks answers via Gemini / DeepSeek AI"
+requires-python = ">=3.13"
 
 [tool.logging.default]
 format = "# {levelname:<8} | {asctime}.{msecs:03.0f} | {name:<15} | {lineno:^4} | {message}"
@@ -22,8 +22,7 @@ exclude = [
     ".mypy_cache",
     ".ruff_cache",
     ".venv",
-    "reports",
-    "logs",
+    "venv",
     "sandbox",
 ]
 
@@ -43,8 +42,5 @@ combine-as-imports = true
 length-sort = true
 
 [tool.ruff.lint.per-file-ignores]
-"cards_view" = ["ALL"]
-"data" = ["ALL"]
-"parse_words" = ["ALL"]
-"addons/review_grammar/src/data/english_data.py" = ["E501"]
-"addons/review_grammar/src/data/prompts.py" = ["E501"]
+"src/data/english_data.py" = ["E501"]
+"src/data/prompts.py" = ["E501"]
