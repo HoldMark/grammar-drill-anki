@@ -30,7 +30,7 @@ weights = {
         },
     },
     "present simple": {
-        "chance": 2,
+        "chance": 1,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -43,8 +43,8 @@ weights = {
         },
     },
     "present perfect": {
-        "chance": 3,
-        "usage": 1,
+        "chance": 8,
+        "usage": 3,
         "type": 1,
         "sentence_types": {
             "affirmative sentences": 1,
@@ -56,7 +56,7 @@ weights = {
         },
     },
     "present perfect continuous": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -69,7 +69,7 @@ weights = {
         },
     },
     "past simple": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -82,7 +82,7 @@ weights = {
         },
     },
     "past continuous": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -95,7 +95,7 @@ weights = {
         },
     },
     "past perfect": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -108,7 +108,7 @@ weights = {
         },
     },
     "past perfect continuous": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -121,7 +121,7 @@ weights = {
         },
     },
     "future simple": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -134,7 +134,7 @@ weights = {
         },
     },
     "future continuous": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -147,7 +147,7 @@ weights = {
         },
     },
     "future perfect": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {
@@ -160,7 +160,7 @@ weights = {
         },
     },
     "future perfect continuous": {
-        "chance": 1,
+        "chance": 0,
         "usage": 1,
         "type": 1,
         "sentence_types": {

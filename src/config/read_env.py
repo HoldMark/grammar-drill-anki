@@ -16,3 +16,4 @@ def load_env(file_path):
 
 load_env(env_path)
 GOOGLE_API_KEY = os.environ.get("goog-api-key")
+DEEPSEEK_API_KEY = os.getenv("deepseek-api-key")
