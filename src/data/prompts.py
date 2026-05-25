@@ -21,4 +21,6 @@ In addition:
 4. "explanation_of_text" – a short summary of what the text is about.
 5. Usage and sentence type may be missing. Do not fail if they are absent.
 6. You must output valid JSON strictly following schema.
+
+CRITICAL: Your response body MUST contain the final JSON object. After completing your internal reasoning, always write the JSON as your actual response content — never leave it empty.
 """

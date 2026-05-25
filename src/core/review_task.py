@@ -18,6 +18,8 @@ def review_task(data: dict) -> dict:
 
     if content != DeepSeekClient.ERROR:
         raw_text = content["choices"][0]["message"]["content"]
+        if not raw_text.strip():
+            return {"result": "DeepSeek returned empty content — reasoning model did not produce final JSON. Please try again."}
         result = json.loads(raw_text)
         store(data_to_review, ReviewResponseModel(**result))
 

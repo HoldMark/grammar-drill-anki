@@ -43,7 +43,7 @@ weights = {
         },
     },
     "present perfect": {
-        "chance": 8,
+        "chance": 2,
         "usage": 3,
         "type": 1,
         "sentence_types": {
@@ -56,8 +56,8 @@ weights = {
         },
     },
     "present perfect continuous": {
-        "chance": 0,
-        "usage": 1,
+        "chance": 16,
+        "usage": 2,
         "type": 1,
         "sentence_types": {
             "affirmative sentences": 1,
@@ -225,7 +225,7 @@ usages = {
         "to ask and answer questions about the duration of an activity": 1,
         "to describe an unusual or uncharacteristic action that is temporary": 1,  # You can use it for an action that is in progress
         "to describe an unusual or uncharacteristic action that was temporary": 1,  # or for one that was in progress
-        "to add emotional coloring (such as annoyance or criticism) to a statement, especially when describing repeated or irritating actions — often with adverbs like `always`, `constantly`, etc.": 1,
+        "used to add emotional coloring to constant, repeated, unplanned or undesired, irritating actions — often with adverbs like `always`, `constantly`, etc.": 1,
     },
     "past simple": {
         "to talk about definite time in the past (often we specify when something happened, e.g. yesterday, three weeks ago, last year, when I was young)": 1,
@@ -344,8 +344,8 @@ if __name__ == "__main__":
 
     for tense, usages_ in usages.items():
         print(
-            f"{tense}: {weights[tense]["chance"]}/{tenses_sum}"
-            f" = {round((weights[tense]["chance"] / tenses_sum) * 100, 2)}%"
+            f"{tense}: {weights[tense]['chance']}/{tenses_sum}"
+            f" = {round((weights[tense]['chance'] / tenses_sum) * 100, 2)}%"
         )
 
         summ = sum(usages_.values())

@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Received from Python:", result);
 
         if (result.result) {
-            alert("Error, please try again!");
+            alert("Error: " + result.result);
             return;
         }
 

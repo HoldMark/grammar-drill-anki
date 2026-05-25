@@ -29,4 +29,5 @@ def get_deepseek_request_data(text) -> dict:
             {"role": "user", "content": json.dumps(text)},
         ],
         "response_format": {"type": "json_object"},
+        "thinking": {"type": "disabled"},
     }
