@@ -81,41 +81,48 @@ document.addEventListener("DOMContentLoaded", () => {
         let styleSuggestions = result.style_suggestions;
         let explanationOfText = result.explanation_of_text;
 
+        // сброс состояния опциональных блоков перед каждым рендером
+        document.querySelector('.correct-version').style.display = 'none';
+        document.querySelector('.grammar-errors').style.display = 'none';
+        document.querySelector('.style-suggestions').style.display = 'none';
+        document.querySelector('.review-grammar-errors-value').innerHTML = '';
+        document.querySelector('.review-style-suggestions-value').innerHTML = '';
+
         // изменение цвета - если true то #00671c, если false то #aa0a0a
-        
+
         document.querySelector('.condition-tense > .condition-name').style.color = isTense ? '#00671c' : '#aa0a0a';
         document.querySelector('.condition-pronoun > .condition-name').style.color = isPronoun ? '#00671c' : '#aa0a0a';
-        
+
         if (cardUsage !== "null") {
             document.querySelector('.condition-usage > .condition-name').style.color = isUsage ? '#00671c' : '#aa0a0a';
         }
         if (cardSentenceType !== "null") {
             document.querySelector('.condition-sentence-type > .condition-name').style.color = isSentenceType ? '#00671c' : '#aa0a0a';
         }
-        
+
         // изменение цвета для word, pos, definition, correctness
         document.querySelector('.review-word > .review-name').style.color = isWord ? '#00671c' : '#aa0a0a';
         document.querySelector('.review-pos > .review-name').style.color = isPos ? '#00671c' : '#aa0a0a';
         document.querySelector('.review-definition > .review-name').style.color = isDefinition ? '#00671c' : '#aa0a0a';
         document.querySelector('.review-correctness > .review-name').style.color = grammarCorrectness ? '#00671c' : '#aa0a0a';
-        
+
         // отображение результата word, pos, definition, correctness
         document.querySelector('.review-word-value').innerHTML = isWord;
         document.querySelector('.review-pos-value').innerHTML = isPos;
         document.querySelector('.review-definition-value').innerHTML = isDefinition;
         document.querySelector('.review-correctness-value').innerHTML = grammarCorrectness;
 
-        
+
         // отображение блоков с ревью
         document.querySelector('.review-result-block').style.display = 'block';
         document.querySelector('.review-text-block').style.display = 'block';
-        
+
         // отображение правильной версии
         if (!grammarCorrectness) {
             document.querySelector('.correct-version').style.display = 'inline-block';
             document.querySelector('.review-correct-version-value').innerHTML = correctVersion;
         }
-        
+
         // вывод списка ошибок
         if (errorsWithGrammar.length > 0) {
 
@@ -128,10 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 li.textContent = suggestion;
                 ul.appendChild(li);
             });
-            
-            grammarErrorsHtml.innerHTML = '';
+
             grammarErrorsHtml.appendChild(ul);
-            
+
         }
 
         // вывод списка предложений по стилю
@@ -146,10 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 li.textContent = suggestion;
                 ul.appendChild(li);
             });
-            
-            styleSuggestionsHtml.innerHTML = '';
+
             styleSuggestionsHtml.appendChild(ul);
-            
+
         }
 
         // вывод объяснения
