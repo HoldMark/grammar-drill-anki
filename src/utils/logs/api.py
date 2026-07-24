@@ -1,13 +1,13 @@
 import json
 import pprint
-import requests
 from json import JSONDecodeError
 from functools import wraps
 from urllib.parse import parse_qs
 
+import requests
+
 from .logger import get_logger
 from ...config.config_loader import logger_config
-
 
 logger = get_logger(__name__)
 

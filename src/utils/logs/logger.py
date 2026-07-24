@@ -1,13 +1,11 @@
 import os
 import sys
 import logging
-
 from logging import Formatter, StreamHandler
 from logging.handlers import RotatingFileHandler
 
-from ...config.config_loader import logger_config
 from ..path import LOGS_PATH
-
+from ...config.config_loader import logger_config
 
 formatter = Formatter(**logger_config.format)
 

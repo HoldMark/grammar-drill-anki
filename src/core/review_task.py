@@ -1,8 +1,8 @@
 import json
 
-from ..llm.deepseek import deepseek_client, DeepSeekClient
 from ..data.models import ReviewResponseModel
 from ..db.db_writer import store
+from ..llm.deepseek import DeepSeekClient, deepseek_client
 from ..data.parse_data import DataToReview
 from ..utils.logs.func import log
 from ..data.base_request_data import get_deepseek_request_data

@@ -2,7 +2,7 @@ import random
 from datetime import datetime
 
 from ..utils.logs.func import log
-from ..data.english_data import usages, pronouns, obsidian_links, weights
+from ..data.english_data import usages, weights, pronouns, obsidian_links
 
 
 def string_to_number(s: str) -> int:
